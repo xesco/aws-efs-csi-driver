@@ -24,12 +24,6 @@ spec:
       {{- end }}
     spec:
       hostNetwork: true
-      {{- if .Values.imagePullSecrets }}
-      imagePullSecrets:
-        {{- range .Values.imagePullSecrets }}
-        - name: {{ . }}
-      {{- end }}
-      {{- end }}
       nodeSelector:
         kubernetes.io/os: linux
         {{- with .Values.controller.nodeSelector }}
